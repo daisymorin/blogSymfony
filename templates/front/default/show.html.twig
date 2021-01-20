@@ -1,0 +1,29 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block title %}Ma super page d'accueil!{% endblock %}
+
+{% block body %}
+
+<div class="articles">
+                <p>{{ article.title }}</p>
+                 <p>{{ article.category.name }}</p>
+                <p>{{ article.content }}</p>
+                <p>{{ article.cover }}</p>
+                <p>Créer le : {{ article.createdAt ? article.createdAt|date('d/m/Y H:i:s') : '' }}</p>
+
+                <p><a href="{{ path('home') }}">Retour à l'accueil</a></p>
+
+</div>
+
+<div>
+    <ul>
+        {% for comment in article.comments %}
+        <li>{{ comment.username ~ ' - ' ~ comment.createdAt|date('d/m/Y H:i:s') }}</li>
+        <li>{{ comment.content}}</li>
+        {% endfor %}
+</div>
+
+
+{{ include('front/comment/_form.html.twig') }}
+
+{% endblock %}

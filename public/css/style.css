@@ -1,0 +1,21 @@
+
+/* Navigation */
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+nav li {
+    margin-right: 3vw;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+.articles{
+   margin-left: 5vw;
+   margin-right: 5vw;
+   margin-top: 8vh;
+}
